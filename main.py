@@ -55,14 +55,17 @@ def check_opts(flags):
     print(flags.style_img.split('/')[-1][:-4])
 
     style_img_name = flags.style_img.split('/')[-1][:-4]  # extract style image name
+    #cắt tên -1: lấy phần tử cuối; :-4 bỏ 4 chữ cái cuối ex:.jpg
     fold_name = os.path.join(flags.checkpoint_dir, style_img_name)
+    #nối chuỗi checkpoint_dir+style_img_name
     if not os.path.isdir(fold_name):
         os.makedirs(fold_name)
-
+    # tạo folder đệ quy checkpoint path
     fold_name = os.path.join(flags.test_dir, style_img_name)
     if not os.path.isdir(fold_name):
         os.makedirs(fold_name)
-
+    # tạo folder đệ quy test path
+    
 
 def main(_):
     os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.gpu_index
