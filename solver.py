@@ -18,6 +18,7 @@ from style_transfer import StyleTranser, Transfer
 class Solver(object):
     def __init__(self, flags):
         run_config = tf.ConfigProto()
+        # về đọc TF Config
         run_config.gpu_options.allow_growth = True
         self.sess = tf.Session(config=run_config)
 
