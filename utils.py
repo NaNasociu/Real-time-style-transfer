@@ -48,7 +48,7 @@ def all_files_under(path, extension=None, append_path=True, sort=True):
         filenames = sorted(filenames)
 
     return filenames
-
+#trả về 1 mảng các đường dẫn
 
 def exists(p, msg):
     assert os.path.exists(p), msg
