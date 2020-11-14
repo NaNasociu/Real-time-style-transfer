@@ -43,8 +43,8 @@ class Solver(object):
         tf_utils.show_all_variables()
 
     def train(self):
-        random.seed(datetime.now())  # set random sedd
-
+        random.seed(datetime.now())  # set random seed
+        
         for iter_time in range(self.num_iters):
             # sampling images and save them
             self.sample(iter_time)
@@ -66,6 +66,7 @@ class Solver(object):
     def save_model(self):
         model_name = 'model'
         self.saver.save(self.sess, os.path.join(self.flags.checkpoint_dir, self.style_img_name, model_name))
+        #TF chạy: self.saver.save
         print('=====================================')
         print('              Model saved!           ')
         print('=====================================\n')
@@ -76,7 +77,7 @@ class Solver(object):
 
             for idx in range(len(self.test_save_paths)):
                 save_path = (self.test_save_paths[idx] + '_%s.png' % iter_time)
-
+                #cứ 2000 path sẽ dán 1 lần
                 print('save path: {}'.format(save_path))
                 print('test_target: {}'.format(self.test_targets[idx]))
 
