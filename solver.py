@@ -21,7 +21,7 @@ class Solver(object):
         # về đọc TF Config
         run_config.gpu_options.allow_growth = True
         self.sess = tf.Session(config=run_config)
-
+        #A class for running TensorFlow operations.
         self.flags = flags
         self.style_img_name = flags.style_img.split('/')[-1][:-4]
         self.content_target_paths = utils.all_files_under(self.flags.train_path)
@@ -45,7 +45,7 @@ class Solver(object):
     def train(self):
         random.seed(datetime.now())  # set random seed
         
-        for iter_time in range(self.num_iters):
+        for iter_time in range(self.num_iters):f
             # sampling images and save them
             self.sample(iter_time)
 
