@@ -18,10 +18,13 @@ import utils as utils
 class StyleTranser(object):
     def __init__(self, sess, flags, num_iters):
         self.sess = sess
-        self.flags = flags
-        self.num_iters = num_iters
-
-        self.style_target = np.asarray([utils.imread(self.flags.style_img)])  # [H, W, C] -> [1, H, W, C]
+        self.flags = flags      #Tổng tất cả các params
+        
+        self.num_iters = num_iters      #Số lần Train
+        :D
+        #asarray: Convert the input to an array. format lại cho chắc đó là mảng :D
+        self.style_target = np.asarray([utils.imread(self.flags.style_img)])  
+        # [H, W, C] -> [1, H, W, C]
         self.style_shape = self.style_target.shape
         self.content_shape = [None, 256, 256, 3]
 
@@ -137,6 +140,7 @@ class StyleTranser(object):
 
 
 class Transfer(object):
+    #viết hàm __call__ để có thể return
     def __call__(self, img, name='transfer', is_reuse=False):
         with tf.variable_scope(name, reuse=is_reuse):
             # [H, W, C] -> [H, W, 32]
