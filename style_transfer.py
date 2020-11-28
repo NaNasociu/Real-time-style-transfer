@@ -26,7 +26,7 @@ class StyleTranser(object):
         self.style_target = np.asarray([utils.imread(self.flags.style_img)])  
         # [H, W, C] -> [1, H, W, C]
         self.style_shape = self.style_target.shape
-        self.content_shape = [None, 256, 256, 3]
+        self.content_shape = [None, 256, 256, 3] #TF 1.15.x
 
         self.style_layers = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
         # self.style_layers = ('relu1_2', 'relu2_2', 'relu3_3', 'relu4_3', 'relu5_3')  # original paper
