@@ -21,7 +21,7 @@ def imread(path, is_gray_scale=False, img_size=None):
 
     if img_size is not None:
         img = scipy.misc.imresize(img, img_size)
-
+#trả về 1 mảng chứa từng điểm ảnh (RGB) theo hàng ngang
     return img
 
 
