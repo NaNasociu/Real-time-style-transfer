@@ -21,7 +21,7 @@ class StyleTranser(object):
         self.flags = flags      #Tổng tất cả các params
         
         self.num_iters = num_iters      #Số lần Train
-        :D
+        
         #asarray: Convert the input to an array. format lại cho chắc đó là mảng :D
         self.style_target = np.asarray([utils.imread(self.flags.style_img)])  
         # [H, W, C] -> [1, H, W, C]
